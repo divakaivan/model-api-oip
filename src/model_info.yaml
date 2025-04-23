@@ -1,0 +1,15 @@
+model_name: "petal_classifier"
+model_version: "v1"
+model_path: "src/petal_model.joblib"
+model_platform: "joblib"
+model_input_signature:
+  - name: "petal length (cm)"
+    shape: [1]
+    datatype: "FP32"
+  - name: "petal width (cm)"
+    shape: [1]
+    datatype: "FP32"
+model_output_signature:
+  - name: "predicted_class"
+    shape: [1]
+    datatype: "INT64"

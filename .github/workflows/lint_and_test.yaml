@@ -10,7 +10,7 @@ on:
 
 jobs:
 
-  test:
+  lint_and_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,12 +22,12 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
           cache-dependency-path: requirements.txt
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-    
+
       - name: Lint code
         run: make lint
 

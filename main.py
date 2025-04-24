@@ -20,7 +20,7 @@ async def lifespan(app: FastAPI):
 
     ml_models.clear()
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 
 ############################################

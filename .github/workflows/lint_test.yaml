@@ -1,4 +1,4 @@
-name: Lint, Test and Push API
+name: Lint and Test - Start
 
 on:
   workflow_dispatch:

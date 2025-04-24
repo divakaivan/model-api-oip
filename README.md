@@ -4,7 +4,7 @@
 
 ![info](info.png)
 
-- design them following the [Open Inference Protocol](https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/) — a growing industry standard for standardized, observable, and interoperable machine learning inference
+- designed following the [Open Inference Protocol](https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/) — a growing industry standard for standardized, observable, and interoperable machine learning inference
 - auto-documentation using FastAPI and Pydantic
 - add linting, testing and pre-commit hooks
 - build and push an Docker image of the API to Docker Hub

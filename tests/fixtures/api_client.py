@@ -1,13 +1,11 @@
 import pytest
 from fastapi.testclient import TestClient
-from src.main import create_app
+from src.main import app
 
 
 # Fixture for FastAPI test client
 @pytest.fixture
 def client() -> TestClient:
-    app = create_app()
-
     app.state.ml_models = {
         "latest_model": DummyModel(),
         "latest_model_info": {

@@ -31,29 +31,23 @@ tags_metadata = [
     },
 ]
 
+app = FastAPI(
+    title="Petal Classifier Model API",
+    description=(
+        "API following the [Open Inference Protocol v2]"
+        "(https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/#open-inference-protocol-v2-inference-protocol)"
+    ),
+    lifespan=lifespan,
+    docs_url="/",
+    redoc_url=None,
+    version="1.0.0",
+    openapi_tags=tags_metadata,
+)
 
-def create_app() -> FastAPI:
-    """Create a FastAPI application."""
-    app = FastAPI(
-        title="Petal Classifier Model API",
-        description=(
-            "API following the [Open Inference Protocol v2]"
-            "(https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/#open-inference-protocol-v2-inference-protocol)"
-        ),
-        lifespan=lifespan,
-        docs_url="/",
-        redoc_url=None,
-        version="1.0.0",
-        openapi_tags=tags_metadata,
-    )
-
-    app.include_router(ROUTER)
-
-    return app
+app.include_router(ROUTER)
 
 
 if __name__ == "__main__":
     import uvicorn
 
-    app = create_app()
     uvicorn.run(app, host="0.0.0.0", port=8000)

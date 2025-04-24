@@ -37,6 +37,10 @@ Because we added descriptions to our `Field`s and endpoints, we can see the docs
 
 ![schemas_docs](schemas_docs.png)
 
+Here is an example of calling the `/v2` endpoint
+
+![v2_ex](v2_call.png)
+
 -----------------
 
 There is still left to do for documentation. For instance when you initially went to the `/v2/models/petal_classifier/v1/infer` endpoint, the example request body looked like:

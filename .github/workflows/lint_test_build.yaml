@@ -1,4 +1,4 @@
-name: Lint and Test API
+name: Lint, Test and Push API
 
 on:
   push:

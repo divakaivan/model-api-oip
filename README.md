@@ -1,20 +1,17 @@
-# 4/restructure-completed
+# 5/lint-test-start
 
-I hope you read the FastAPI docs page about bigger applications with multiple files. 
+## Tests
 
-In `routes.py` I defined a `ROUTER = APIRouter()` which I use on the endpoints. Instead of `app.get(...)`, now we have `ROUTER.get(...)`. And then we import this `ROUTER` into `main.py` and pass it so the FastAPI `app` can use it: `app.include_router(ROUTER)`
+We will use pytest for writing tests. It was already included in the `requirements.txt` so if you followed from the start you're all good.
 
-In addition, the lifespan now initialises the model info dict and model file into the app's state. To access this state from the different endpoints, we add a `request: Request` as a parameter, and get the item like: `ml_models = request.app.state.ml_models`
+Take a look at the `tests` folder. It is a common convention to write tests in python in a tests folder, and inside to have sub-folders specifying the type of tests. In our case, we will write unit tests only. I invite you to read FastAPI's docs on [Testing](https://fastapi.tiangolo.com/tutorial/testing/)
 
-### IMPORTANT!!!
+At the current state, you will find the following in the `tests` folder:
 
-Now that we have restructured, make sure to update the paths to the model joblib file and the model info yaml file like:
+- `conftest.py` - for our tests we want to pass a test FastAPI client to different tests. We create a fixture for that, and we need to register it using the syntax in conftest.py
+- `fixtures/api_client.py` - a test client for our app using FastAPI's own TestClient class, and passing a sample ml_models config along with a dummy model
+- `unit_tests/test__routes_error_cases.py` and `unit_tests/test__routes_happy_path.py` - they are empty but for you to implement. 
 
-- `with open("src/model_info.yaml", "r")` in `main.py`'s `lifespan`
-- `model_path: "src/petal_model.joblib"` in `model_info.yaml`
+You can check that pytest is working correctly, by running `pytest` from the root dir of the project.
 
-Now we can run the app from the root dir using `python -m src.main`
-
-------------------------------
-
-The next thing we will talk about is linting and testing. So join me in the `5/lint-test-start` branch
+## Linting

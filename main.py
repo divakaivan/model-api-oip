@@ -20,7 +20,29 @@ async def lifespan(app: FastAPI):
 
     ml_models.clear()
 
-app = FastAPI(lifespan=lifespan)
+tags_metadata = [
+    {
+        "name": "model",
+        "description": "Endpoints related to the ML model.",
+    },
+    {
+        "name": "server",
+        "description": "Endpoints related to the Server",
+    },
+]
+
+app = FastAPI(
+        title="Petal Classifier Model API",
+        description=(
+            "API following the [Open Inference Protocol v2]"
+            "(https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/#open-inference-protocol-v2-inference-protocol)"
+        ),
+        lifespan=lifespan,
+        docs_url="/",
+        redoc_url=None,
+        version="1.0.0",
+        openapi_tags=tags_metadata,
+    )
 
 
 ############################################
@@ -36,6 +58,7 @@ class ServerReadyResponse(BaseModel):
     "/v2/health/ready",
     response_model=ServerReadyResponse,
     description="The “server ready” health API indicates if all the models are ready for inferencing.",
+    tags=["server"]
 )
 def server_ready():
     response = ServerReadyResponse(ready=True)
@@ -53,6 +76,7 @@ class ServerLiveResponse(BaseModel):
     "/v2/health/live",
     response_model=ServerLiveResponse,
     description="The “server live” health API indicates if the inference server is able to receive and respond to metadata and inference requests.",
+    tags=["server"]
 )
 def server_live():
     response = ServerLiveResponse(live=True)
@@ -74,6 +98,7 @@ class ModelReadyResponse(BaseModel):
     "/v2/models/petal_classifier/v1/ready",
     response_model=ModelReadyResponse,
     description="The “model ready” health API indicates if a specific model is ready for inferencing. The model name and (optionally) version must be available in the URL.",
+    tags=["model"]
 )
 def model_ready():
     model_name = ml_models["latest_model_info"]["model_name"]
@@ -113,6 +138,7 @@ class ServerMetadataErrorResponse(BaseModel):
         }
     },
     description="The 'server metadata' API returns details describing the server.",
+    tags=["server"],
 )
 def server_metadata():
     try:
@@ -170,6 +196,7 @@ class ModelMetadataErrorResponse(BaseModel):
         }
     },
     description="The 'model metadata' API is a per-model endpoint that returns details about the model passed in the path.",
+    tags=["model"],
 )
 def model_metadata():
     try:
@@ -258,6 +285,7 @@ class InferenceErrorResponse(BaseModel):
         }
     },
     description="The /infer endpoint performs inference on a model. The response is the prediction result.",
+    tags=["model"],
 )
 def inference(model_input: InferenceRequestInput):
     try:

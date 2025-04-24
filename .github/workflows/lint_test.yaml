@@ -1,7 +1,9 @@
 name: Lint and Test - Start
 
 on:
-  workflow_dispatch:
+    push:
+      branches:
+        - 6/ci-completed
 
 jobs:
 

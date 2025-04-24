@@ -1,13 +1,22 @@
 # 6/ci-start
 
-Here, we will create a simple Github Action pipeline. If you are not familiar with what's Github Actions (or GHA), I suggest taking a look at this video by [TechWorld with Nana](https://www.youtube.com/watch?v=R8_veQiYBjI) - she is awesome for anything DevOps related.
+### Github Actions
 
-Apps don’t just live on our personal laptops. Even if all the tests pass locally, we need to make sure they also work on other machines — like in production or on a teammate’s setup. That’s where Continuous Integration (CI) comes in. The CI pipeline we will build, automatically checks out your repo, runs linting, and executes tests in a clean, independent environment to catch any issues early.
+I hope you learned at least a little bit about Github Actions and their benefits.
 
-Here is a rough guide:
+Take a look at my implementation in `.github/workflows/
 
+You may also notice the following
+
+```yaml
+on:
+  workflow_dispatch:
 ```
-checkout repo -> setup python -> install dependencies -> lint code -> run tests
-```
 
-If you want to write some (or preferably all) of that by yourself, you can start by googling something like "github actions checkout repo", and next replace checkout repo with "setup python", etc and see where you end up.
+This tells github that this github action pipeline will be run manually only. If you push this file, go to your Github repo -> Actions (tab at the top)
+
+### Makefile
+
+You may notice this `make` syntax.
+
+I decided to add a Makefile to make running commands a bit easier. Take a look at the Makefile for more info, and also try running `make` in your terminal.

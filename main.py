@@ -6,8 +6,13 @@ app = FastAPI()
 @app.post("/predict")
 def predict(data: dict):
 
-    model = joblib.load("petal_model.joblib")
-    prediction = model.predict([[data["petal length (cm)"], data["petal width (cm)"]]])
+    # TODO
+    # use joblib to load the model
+    # expected model inputs: 
+    #   petal length (cm): float
+    #   petal width (cm): float
+    # model output:
+    #   iris species: int (0, 1, 2)
 
     return {"prediction": int(prediction[0])}
 

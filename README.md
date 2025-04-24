@@ -4,16 +4,20 @@
 
 I hope you learned at least a little bit about Github Actions and their benefits.
 
-Take a look at my implementation in `.github/workflows/
+Take a look at my implementation in `.github/workflows/`
 
 You may also notice the following
 
 ```yaml
 on:
-  workflow_dispatch:
+    push:
+      branches:
+        - 6/ci-completed
 ```
 
-This tells github that this github action pipeline will be run manually only. If you push this file, go to your Github repo -> Actions (tab at the top)
+This tells github that this github action pipeline will be run on any push to the branch with that particular name. If you push this file, go to your Github repo -> Actions (tab at the top), you will see the action running.
+
+![gha-run](gha-run.png)
 
 ### Makefile
 

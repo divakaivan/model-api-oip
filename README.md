@@ -1,5 +1,7 @@
 # 1/setup-completed
 
+If you skipped the 1/setup-start, please check the below instructions.
+
 Clone the repo from the starting point branch
 
 - `git clone git clone -b 1/setup-completed  https://github.com/user/repository.git`

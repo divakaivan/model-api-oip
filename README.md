@@ -14,3 +14,7 @@ Now that we have restructured, make sure to update the paths to the model joblib
 - `model_path: "src/petal_model.joblib"` in `model_info.yaml`
 
 Now we can run the app from the root dir using `python -m src.main`
+
+------------------------------
+
+The next thing we will talk about is linting and testing. So join me in the `5/lint-test-start` branch

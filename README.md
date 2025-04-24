@@ -1,5 +1,7 @@
 # 2/endpoints-start
 
+Before continuing make sure to add all the changes from the current branch to your code (in case you are not switching branches between steps)
+
 ## [FastAPI lifespan](https://fastapi.tiangolo.com/advanced/events/#lifespan)
 
 `You can define logic (code) that should be executed before the application starts up. This means that this code will be executed once, before the application starts receiving requests.` - This is from the FastAPI docs and I suggest you read the whole page. For our ML model, are only interested in loading it once - when the API starts. We don't want our model to be loaded every time a user makes a request. To implement this behaviour we use the FastAPI lifespan events. 

@@ -54,7 +54,6 @@ class ServerLiveResponse(BaseModel):
 @app.get(
     "/v2/health/live",
     response_model=ServerLiveResponse,
-    tags=["server"],
     description="The “server live” health API indicates if the inference server is able to receive and respond to metadata and inference requests.",
 )
 def server_live():
@@ -72,7 +71,6 @@ class ModelReadyResponse(BaseModel):
 @app.get(
     "/v2/models/petal_classifier/v1/ready",
     response_model=ModelReadyResponse,
-    tags=["model"],
     description="The “model ready” health API indicates if a specific model is ready for inferencing. The model name and (optionally) version must be available in the URL.",
 )
 def model_ready():
@@ -99,7 +97,6 @@ class ServerMetadataErrorResponse(BaseModel):
             "description": "Error in server metadata request",
         }
     },
-    tags=["server"],
     description="The 'server metadata' API returns details describing the server.",
 )
 def server_metadata():
@@ -129,7 +126,6 @@ class ModelMetadataErrorResponse(BaseModel):
             "description": "Error in model metadata request",
         }
     },
-    tags=["model"],
     description="The 'model metadata' API is a per-model endpoint that returns details about the model passed in the path.",
 )
 def model_metadata():
@@ -165,7 +161,6 @@ class InferenceErrorResponse(BaseModel):
             "description": "Error in model inference request",
         }
     },
-    tags=["model"],
     description="The /infer endpoint performs inference on a model. The response is the prediction result.",
 )
 def inference(model_input: InferenceRequestInput):

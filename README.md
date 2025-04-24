@@ -1,64 +1,9 @@
-# 2/endpoints-completed
+# 3/improve-docs-start
 
-I hope you read some (or quite a bit) of the FastAPI/OIP/Pydantic docs. They are awesome! and definitely suggest to read the FastAPI docs as a mini-book. You will learn a tonne!
+To improve the user experience by adding an example, I invite you to read this page from the FastAPI docs - [Declare Request Example Data](https://fastapi.tiangolo.com/tutorial/schema-extra-example/) and specifically the section about adding a `model_config` to pydantic models. 
 
-If you implemented the endpoints, or switched to the current branch. By running `python main.py` you should see something like
+Try to add a `model_config` field to the models that you think need an example. One case is like at the end of the last chapter - showing an example request body when using the inference endpoint. You can use the example I gave you in that previous readme as a guide. 
 
+Another quality of life improvement would be adding tags. At the moment we see the word default above our endpoints. We can improve that by adding `tags` to our endpoints. I invite you to read this page on [Metadata and Docs URLs](https://fastapi.tiangolo.com/tutorial/metadata/) and try to improve how our API looks.
 
-You can try the `/v2/models/petal_classifier/v1/infer` endpoint by passing the below as the request body
-
-```json
-{
-    "id":"inference-123",
-    "inputs":[
-        {
-            "name":"petal length (cm)",
-            "shape":[
-                1
-            ],
-            "datatype":"FP32",
-            "data":4.5
-        },
-        {
-            "name":"petal width (cm)",
-            "shape":[
-                1
-            ],
-            "datatype":"FP32",
-            "data":1.2
-        }
-    ]
-}
-```
-
-And all the other endpoints you can directly try as they don't require a request body. 
-
-Because we added descriptions to our `Field`s and endpoints, we can see the docs is populated nicely:
-
-![schemas_docs](schemas_docs.png)
-
-Here is an example of calling the `/v2` endpoint
-
-![v2_ex](v2_call.png)
-
------------------
-
-There is still left to do for documentation. For instance when you initially went to the `/v2/models/petal_classifier/v1/infer` endpoint, the example request body looked like:
-
-```json
-{
-  "id": "string",
-  "inputs": [
-    {
-      "name": "string",
-      "shape": [
-        0
-      ],
-      "datatype": "string",
-      "data": 0
-    }
-  ]
-}
-```
-
-This is not very informative of how the endpoint can be used. In the next section `3/improve-docs-start` we will work on that and other small details related to the docs page. 
+Switch to `3/improve-docs-completed` whenever you think you can move on.

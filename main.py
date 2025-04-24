@@ -10,7 +10,7 @@ ml_models = {}
 async def lifespan(app: FastAPI):
     import joblib
 
-    with open("src/model_info.yaml", "r") as f:
+    with open("model_info.yaml", "r") as f:
         model_info = yaml.safe_load(f)
 
     ml_models["latest_model_info"] = model_info

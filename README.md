@@ -2,8 +2,6 @@
 
 ## From `/predict` to the Open Inference Protocol
 
-Take your `/predict` ML model APIs to the next level
-
 ![info](info.png)
 
 - design them following the [Open Inference Protocol](https://kserve.github.io/website/latest/modelserving/data_plane/v2_protocol/) — a growing industry standard for standardized, observable, and interoperable machine learning inference
@@ -45,12 +43,14 @@ Go to the [`1/setup-start` branch](https://github.com/divakaivan/model-api-oip/t
 The structure is as follows:
 
 1. Setup
-2. Endpoints
+2. Implement Endpoints
 3. Improve docs
 4. Restructure
-5. Lint & Test
-6. CI
-7. Docker
+5. Add Linting & Tests
+6. CI with Github Actions
+7. Dockerising our app
+
+Throughout these above stages I share lots of links to documentation. Some libraries have great docs and thankfully the ones I have used here have amazing docs and explanations. If you learn anything form this repo, I hope it's atleast to get into the habit of looking at the docs of the libraries you use when you need an answer. If you just came here to have a quick look - read the FastAPI docs as a book :)
 
 ### Notes
 

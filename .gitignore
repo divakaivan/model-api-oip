@@ -6,3 +6,4 @@ __pycache__
 *.egg
 .ruff_cache
 .pytest_cache
+*.drawio

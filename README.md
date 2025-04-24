@@ -2,7 +2,7 @@
 
 Clone the repo from the starting point branch
 
-- `git clone git clone -b 1/setup  https://github.com/user/repository.git`
+- `git clone git clone -b 1/setup-completed  https://github.com/user/repository.git`
 
 Create a new venv
 

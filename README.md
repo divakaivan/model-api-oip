@@ -8,6 +8,10 @@ Create a new venv
 
 - `python -m venv venv`
 
+Activate the venv
+
+- `source venv/bin/activate` (Mac)
+
 Install requirements
 
 - `pip install --no-cache-dir -r requirements.txt`

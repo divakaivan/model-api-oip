@@ -48,7 +48,7 @@ The structure is as follows:
 4. Restructure
 5. Add Linting & Tests
 6. CI with Github Actions
-7. Dockerising our app
+7. Dockerise and push to Docker Hub
 
 Throughout these above stages I share lots of links to documentation. Some libraries have great docs and thankfully the ones I have used here have amazing docs and explanations. If you learn anything form this repo, I hope it's atleast to get into the habit of looking at the docs of the libraries you use when you need an answer. If you just came here to have a quick look - read the FastAPI docs as a book :)
 

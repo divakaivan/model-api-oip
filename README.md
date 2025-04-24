@@ -50,8 +50,24 @@ The structure is as follows:
 6. CI with Github Actions
 7. Dockerise and push to Docker Hub
 
-Throughout these above stages I share lots of links to documentation. Some libraries have great docs and thankfully the ones I have used here have amazing docs and explanations. If you learn anything form this repo, I hope it's atleast to get into the habit of looking at the docs of the libraries you use when you need an answer. If you just came here to have a quick look - read the FastAPI docs as a book :)
+Throughout these above stages I share lots of links to documentation. Some libraries have great docs and thankfully the ones I have used here have amazing docs and explanations. If you learn anything form this repo, I hope it's atleast to get into the habit of looking at the docs of the libraries you use when you need an answer. If you just came here to have a quick look - read the FastAPI docs as a book, or the OIP docs page, or any of the other mentioned tool's docs.
 
-### Notes
+### Want to learn from industry professionals?
 
 While I think this takes a beginner from just `/predict` and introduces them to some important concepts, I suggest looking into [Eric Riddoch](https://www.linkedin.com/in/eric-riddoch/)'s teaching material: [Taking Python to Production](https://www.udemy.com/course/setting-up-the-linux-terminal-for-software-development/?srsltid=AfmBOoqaXWAasFIZgQFTQA9TTfUUyP5P0hJb6RGd48esUgHeVJ7Xbo5t) and [Cloud Engineering for Python Devs](https://mlops-club.org/).
+
+If you are curious about MLOps on a wider scale (or you are curious about a model's life outside a jupyter notebook), I suggest these resource:
+
+- (course) [MLOps zoomcamp](https://github.com/DataTalksClub/mlops-zoomcamp)
+- (blog+course) [Marvelous MLOps](https://marvelousmlops.substack.com/)
+- (blog) [MLOps](https://ml-ops.org/)
+- (book) [MLE with Python 2nd ed. by Andy McMahon](https://www.oreilly.com/library/view/machine-learning-engineering/9781837631964/)
+- (book) [Designing ML Systems by Chip Huyen](https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/)
+- (paper) [Towards CRISP-ML(Q): A Machine Learning Process Model with Quality Assurance Methodology](https://arxiv.org/pdf/2003.05155)
+
+#### Improvements
+
+- make videos
+- update the instructions for the steps based on feedback
+- improve the endpoints' structure
+- open to feedback and help to improve this 'course'

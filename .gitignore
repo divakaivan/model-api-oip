@@ -7,3 +7,4 @@ __pycache__
 .ruff_cache
 .pytest_cache
 *.drawio
+.DS_Store
